@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/01-template/App/static" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-router/App/static" isTestSource="false" />
     </content>
+    <orderEntry type="jdk" jdkName="Python 3.11 (flask2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyNamespacePackagesService">

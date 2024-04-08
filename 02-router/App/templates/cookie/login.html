@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flex布局居中表单</title>
+<style>
+    /* 设置整个页面的高度为视口高度，保证垂直居中 */
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+    }
+
+    /* 表单容器样式 */
+    .form-container {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    /* 表单样式 */
+    form {
+        display: flex;
+        flex-direction: column; /* 垂直排列表单元素 */
+        align-items: center; /* 水平居中表单元素 */
+    }
+
+    input, button {
+        margin-top: 10px; /* 间距设置 */
+    }
+</style>
+</head>
+<body>
+    <div class="form-container">
+{#        <form method="post" action="{{ url_for('user_cookie.login')}}">#}
+{#        <form method="post" action="">#}
+{#        不要加斜杠#}
+        <form method="post" action="/login">
+            <p>UserName</p>
+            <input type="text" placeholder="UserName" name="user_name">
+            <p>PassWord</p>
+            <input type="password" placeholder="PassWord" name="pass_word">
+            <br>
+            <button type="submit">点击提交</button>
+        </form>
+    </div>
+</body>
+</html>
