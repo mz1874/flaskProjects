@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父模板</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+<h1 name="ss">我是父模板,我的颜色是红色</h1>
+<h1>正常颜色</h1>
+{#父模板#}
+{% block header %}
+{% endblock %}
+
+{% block body %}
+    <p>你好</p>
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}
+</body>
+</html>

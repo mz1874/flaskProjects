@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+    {#继承父容器#}
+    {{ super() }}
+    <p>Hello</p>
+    {% include "child2.html" %}
+    {#宏的使用#}
+    {{ Person('张三',77) }}
+{% endblock %}
+
+
+{#宏的定义#}
+{% macro Person(name,age) %}
+    <h1>{{ name }}</h1>
+    <h1>{{ age }}</h1>
+{% endmacro %}

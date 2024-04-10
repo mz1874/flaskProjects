@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flask构建网页--test</title>
+</head>
+<body>
+<div style='background-color:yellow;width:300px'>
+    <h1>主页</h1>
+</div>
+<h4>模板语言变量</h4>
+<p>name:{{ name }}</p>
+<p>age:{{ age }}</p>
+<p>likes:{{ likes }}</p>
+<br>
+<h4>标签语法</h4>
+{% if age > 18 %}
+    <p>大于十八岁</p>
+{% elif age <18 %}
+    <p>小于十八岁</p>
+{% else %}
+    <p>等于十八岁</p>
+{% endif %}
+<br>
+<h1>For</h1>
+<h4>显示所有的爱好</h4>
+{% for i in likes %}
+    {#判断首位的操作#}
+    {% if loop.first %}
+        <p style="color: red">{{ i }}</p>
+    {% endif %}
+
+    {% if loop.last %}
+        <p style="color: blue">{{ i }}</p>
+    {% endif %}
+
+
+    {#使用内置的loop函数来快速显示index，如果使用的是index的话， 下标是从1开始，如果使用的是index0的话是从0开始#}
+    <p>{{ loop.index }}</p>
+    <p>{{ loop.index0 }}</p>
+    {#相反的下标#}
+    <p>{{ loop.revindex }}</p>
+    <p>{{ loop.revindex0 }}</p>
+
+    {#显示之前的#}
+{#    {{ loop.nextitem }}#}
+    {#显示之后的#}
+{#    {{ loop.previtem }}#}
+
+    {#for 内的else 试用与 当for出现了问题的情况#}
+{% else %}
+    <b>出现了问题</b>
+{% endfor %}
+
+<hr>
+<h1>测试过滤器开始</h1>
+{{ name| upper }}
+{{ name| lower }}
+{{ name| first }}
+{{ name| last }}
+{{ name| capitalize }}
+{{ name| unique }}
+{{ name2| default("sss") }}
+
+</body>
+</html>
